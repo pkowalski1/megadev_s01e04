@@ -14,10 +14,7 @@ export type DigestRow = {
 export type NightRead = {
   rows: DigestRow[];
   badLines: number;
+  counts: { ok: number; retry: number; fail: number };
 };
 
-export function readNight(runsDir: string, night: string): NightRead {
-  void runsDir;
-  void night;
-  throw new Error('readNight is not implemented');
-}
+export { NightNotFound, readNight } from './read.js';
